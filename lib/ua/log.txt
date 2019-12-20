@@ -1,0 +1,639 @@
+05.11.10
+No file to fetch
+--end
+05.11.10
+No file to fetch
+--end
+05.14.10
+No file to fetch
+--end
+05.14.10
+Successfully copied MidwoodAnnuityExport20100507.CSV.pgp to crypt file
+Added 18664 records to database
+--end
+05.21.10
+Successfully copied MidwoodAnnuityExport20100520.CSV.pgp to crypt file
+Added 18705 records to database
+--end
+05.28.10
+Successfully copied MidwoodAnnuityExport20100527.CSV.pgp to crypt file
+Added 18718 records to database
+--end
+06.04.10
+Successfully copied MidwoodAnnuityExport20100603.CSV.pgp to crypt file
+Added 18729 records to database
+--end
+06.11.10
+Successfully copied MidwoodAnnuityExport20100610.CSV.pgp to crypt file
+Added 18749 records to database
+--end
+06.18.10
+Successfully copied MidwoodAnnuityExport20100617.CSV.pgp to crypt file
+Added 18722 records to database
+--end
+06.25.10
+Successfully copied MidwoodAnnuityExport20100624.CSV.pgp to crypt file
+Added 18754 records to database
+--end
+07.02.10
+Successfully copied MidwoodAnnuityExport20100701.CSV.pgp to crypt file
+Added 18807 records to database
+--end
+07.09.10
+Successfully copied MidwoodAnnuityExport20100708.CSV.pgp to crypt file
+Added 18851 records to database
+--end
+07.16.10
+Successfully copied MidwoodAnnuityExport20100715.CSV.pgp to crypt file
+Added 18896 records to database
+--end
+07.23.10
+Successfully copied MidwoodAnnuityExport20100722.CSV.pgp to crypt file
+Added 18956 records to database
+--end
+07.30.10
+Successfully copied MidwoodAnnuityExport20100729.CSV.pgp to crypt file
+Added 18988 records to database
+--end
+08.06.10
+Successfully copied MidwoodAnnuityExport20100805.CSV.pgp to crypt file
+Added 19041 records to database
+--end
+08.13.10
+Successfully copied MidwoodAnnuityExport20100812.CSV.pgp to crypt file
+Added 19113 records to database
+--end
+08.20.10
+Successfully copied MidwoodAnnuityExport20100819.CSV.pgp to crypt file
+Added 19235 records to database
+--end
+08.27.10
+No file to fetch
+--end
+09.03.10
+Successfully copied MidwoodAnnuityExport20100902.CSV.pgp to crypt file
+Added 19425 records to database
+--end
+09.10.10
+Successfully copied MidwoodAnnuityExport20100909.CSV.pgp to crypt file
+Added 19585 records to database
+--end
+09.17.10
+Successfully copied MidwoodAnnuityExport20100916.CSV.pgp to crypt file
+Added 19632 records to database
+--end
+09.24.10
+Successfully copied MidwoodAnnuityExport20100923.CSV.pgp to crypt file
+Added 19701 records to database
+--end
+10.01.10
+Successfully copied MidwoodAnnuityExport20100930.CSV.pgp to crypt file
+Added 19863 records to database
+--end
+10.08.10
+Successfully copied MidwoodAnnuityExport20101007.CSV.pgp to crypt file
+Added 19883 records to database
+--end
+10.15.10
+Successfully copied MidwoodAnnuityExport20101014.CSV.pgp to crypt file
+Added 19911 records to database
+--end
+10.22.10
+Successfully copied MidwoodAnnuityExport20101021.CSV.pgp to crypt file
+Added 19925 records to database
+--end
+10.29.10
+Successfully copied MidwoodAnnuityExport20101028.CSV.pgp to crypt file
+Added 19935 records to database
+--end
+11.05.10
+Successfully copied MidwoodAnnuityExport20101104.CSV.pgp to crypt file
+Added 19950 records to database
+--end
+11.12.10
+Successfully copied MidwoodAnnuityExport20101111.CSV.pgp to crypt file
+Added 19962 records to database
+--end
+11.19.10
+No file to fetch
+--end
+11.26.10
+Successfully copied MidwoodAnnuityExport20101125.CSV.pgp to crypt file
+Added 19977 records to database
+--end
+12.03.10
+Successfully copied MidwoodAnnuityExport20101202.CSV.pgp to crypt file
+Added 19978 records to database
+--end
+12.10.10
+Successfully copied MidwoodAnnuityExport20101209.CSV.pgp to crypt file
+Added 19980 records to database
+--end
+12.17.10
+Successfully copied MidwoodAnnuityExport20101216.CSV.pgp to crypt file
+Added 19983 records to database
+--end
+12.24.10
+Successfully copied MidwoodAnnuityExport20101223.CSV.pgp to crypt file
+Added 19984 records to database
+--end
+12.31.10
+Successfully copied MidwoodAnnuityExport20101230.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+01.07.11
+Successfully copied MidwoodAnnuityExport20110106.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+01.14.11
+Successfully copied MidwoodAnnuityExport20110113.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+01.21.11
+Successfully copied MidwoodAnnuityExport20110120.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+01.28.11
+Successfully copied MidwoodAnnuityExport20110127.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+02.04.11
+Successfully copied MidwoodAnnuityExport20110203.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+02.11.11
+Successfully copied MidwoodAnnuityExport20110210.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+02.18.11
+Successfully copied MidwoodAnnuityExport20110217.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+02.25.11
+Successfully copied MidwoodAnnuityExport20110224.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+03.04.11
+Successfully copied MidwoodAnnuityExport20110303.CSV.pgp to crypt file
+Added 14965 records to database
+--end
+03.11.11
+Successfully copied MidwoodAnnuityExport20110310.CSV.pgp to crypt file
+Added 19984 records to database
+--end
+03.18.11
+Error establishing FTP connection
+--end
+03.25.11
+Error establishing FTP connection
+--end
+03.29.11
+Successfully copied MidwoodAnnuityExport20110324.CSV.pgp to crypt file
+Added 19985 records to database
+--end
+04.01.11
+Successfully copied MidwoodAnnuityExport20110331.CSV.pgp to crypt file
+Added 19986 records to database
+--end
+04.08.11
+Successfully copied MidwoodAnnuityExport20110407.CSV.pgp to crypt file
+Added 19986 records to database
+--end
+04.15.11
+Successfully copied MidwoodAnnuityExport20110414.CSV.pgp to crypt file
+Added 19986 records to database
+--end
+04.22.11
+Successfully copied MidwoodAnnuityExport20110421.CSV.pgp to crypt file
+Added 19986 records to database
+--end
+04.29.11
+Successfully copied MidwoodAnnuityExport20110428.CSV.pgp to crypt file
+Added 19986 records to database
+--end
+05.06.11
+Successfully copied MidwoodAnnuityExport20110505.CSV.pgp to crypt file
+Added 19986 records to database
+--end
+05.13.11
+Successfully copied MidwoodAnnuityExport20110512.CSV.pgp to crypt file
+Added 20024 records to database
+--end
+05.20.11
+Successfully copied MidwoodAnnuityExport20110519.CSV.pgp to crypt file
+Added 20038 records to database
+--end
+05.27.11
+Successfully copied MidwoodAnnuityExport20110526.CSV.pgp to crypt file
+Added 20038 records to database
+--end
+06.03.11
+Successfully copied MidwoodAnnuityExport20110602.CSV.pgp to crypt file
+Added 20038 records to database
+--end
+06.10.11
+Successfully copied MidwoodAnnuityExport20110609.CSV.pgp to crypt file
+Added 20038 records to database
+--end
+06.17.11
+Successfully copied MidwoodAnnuityExport20110616.CSV.pgp to crypt file
+Added 20066 records to database
+--end
+06.24.11
+Successfully copied MidwoodAnnuityExport20110623.CSV.pgp to crypt file
+Added 20066 records to database
+--end
+07.01.11
+Successfully copied MidwoodAnnuityExport20110630.CSV.pgp to crypt file
+Added 20066 records to database
+--end
+07.08.11
+Successfully copied MidwoodAnnuityExport20110707.CSV.pgp to crypt file
+Added 20067 records to database
+--end
+07.15.11
+Successfully copied MidwoodAnnuityExport20110714.CSV.pgp to crypt file
+Added 20141 records to database
+--end
+07.22.11
+Successfully copied MidwoodAnnuityExport20110721.CSV.pgp to crypt file
+Added 20343 records to database
+--end
+07.29.11
+Error establishing FTP connection
+--end
+08.05.11
+Successfully copied MidwoodAnnuityExport20110804.CSV.pgp to crypt file
+Added 20533 records to database
+--end
+08.12.11
+Successfully copied MidwoodAnnuityExport20110811.CSV.pgp to crypt file
+Added 20532 records to database
+--end
+08.19.11
+Successfully copied MidwoodAnnuityExport20110818.CSV.pgp to crypt file
+Added 20531 records to database
+--end
+08.26.11
+Successfully copied MidwoodAnnuityExport20110825.CSV.pgp to crypt file
+Added 20531 records to database
+--end
+09.02.11
+Successfully copied MidwoodAnnuityExport20110901.CSV.pgp to crypt file
+Added 20532 records to database
+--end
+09.09.11
+Successfully copied MidwoodAnnuityExport20110908.CSV.pgp to crypt file
+Added 20532 records to database
+--end
+09.16.11
+Successfully copied MidwoodAnnuityExport20110915.CSV.pgp to crypt file
+Added 20532 records to database
+--end
+09.23.11
+Successfully copied MidwoodAnnuityExport20110922.CSV.pgp to crypt file
+Added 20532 records to database
+--end
+09.30.11
+Successfully copied MidwoodAnnuityExport20110929.CSV.pgp to crypt file
+Added 20530 records to database
+--end
+10.07.11
+Successfully copied MidwoodAnnuityExport20111006.CSV.pgp to crypt file
+Added 20530 records to database
+--end
+10.14.11
+No file to fetch
+--end
+10.21.11
+Successfully copied MidwoodAnnuityExport20111020.CSV.pgp to crypt file
+Added 20533 records to database
+--end
+10.28.11
+Successfully copied MidwoodAnnuityExport20111027.CSV.pgp to crypt file
+Added 15899 records to database
+--end
+11.04.11
+Successfully copied MidwoodAnnuityExport20111103.CSV.pgp to crypt file
+Added 20534 records to database
+--end
+11.11.11
+Successfully copied MidwoodAnnuityExport20111110.CSV.pgp to crypt file
+Added 20534 records to database
+--end
+11.18.11
+No file to fetch
+--end
+11.25.11
+Successfully copied MidwoodAnnuityExport20111124.CSV.pgp to crypt file
+Added 20539 records to database
+--end
+12.02.11
+No file to fetch
+--end
+12.09.11
+Successfully copied MidwoodAnnuityExport20111208.CSV.pgp to crypt file
+Added 20539 records to database
+--end
+12.16.11
+Successfully copied MidwoodAnnuityExport20111215.CSV.pgp to crypt file
+Added 17611 records to database
+--end
+12.23.11
+Successfully copied MidwoodAnnuityExport20111222.CSV.pgp to crypt file
+Added 20541 records to database
+--end
+12.30.11
+Successfully copied MidwoodAnnuityExport20111229.CSV.pgp to crypt file
+Added 20541 records to database
+--end
+01.06.12
+Successfully copied MidwoodAnnuityExport20120105.CSV.pgp to crypt file
+Added 20254 records to database
+--end
+01.13.12
+No file to fetch
+--end
+01.20.12
+Successfully copied MidwoodAnnuityExport20120119.CSV.pgp to crypt file
+Added 19483 records to database
+--end
+01.27.12
+Successfully copied MidwoodAnnuityExport20120126.CSV.pgp to crypt file
+Added 20540 records to database
+--end
+02.03.12
+Successfully copied MidwoodAnnuityExport20120202.CSV.pgp to crypt file
+Added 18206 records to database
+--end
+02.10.12
+No file to fetch
+--end
+02.17.12
+Successfully copied MidwoodAnnuityExport20120216.CSV.pgp to crypt file
+Added 10322 records to database
+--end
+02.24.12
+No file to fetch
+--end
+03.02.12
+Successfully copied MidwoodAnnuityExport20120224.CSV.pgp to crypt file
+Added 20544 records to database
+--end
+03.09.12
+Successfully copied MidwoodAnnuityExport20120308.CSV.pgp to crypt file
+Added 10101 records to database
+--end
+03.16.12
+Successfully copied MidwoodAnnuityExport20120315.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+03.23.12
+Successfully copied MidwoodAnnuityExport20120322.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+03.30.12
+Successfully copied MidwoodAnnuityExport20120329.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+04.06.12
+Successfully copied MidwoodAnnuityExport20120405.CSV.pgp to crypt file
+Added 3255 records to database
+--end
+04.13.12
+Successfully copied MidwoodAnnuityExport20120412.CSV.pgp to crypt file
+Added 19708 records to database
+--end
+04.20.12
+Successfully copied MidwoodAnnuityExport20120419.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+04.27.12
+Successfully copied MidwoodAnnuityExport20120426.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+05.04.12
+Successfully copied MidwoodAnnuityExport20120503.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+05.11.12
+Successfully copied MidwoodAnnuityExport20120510.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+05.18.12
+Successfully copied MidwoodAnnuityExport20120517.CSV.pgp to crypt file
+Added 20545 records to database
+--end
+05.25.12
+Successfully copied MidwoodAnnuityExport20120524.CSV.pgp to crypt file
+Added 20544 records to database
+--end
+06.01.12
+No file to fetch
+--end
+06.08.12
+No file to fetch
+--end
+06.15.12
+No file to fetch
+--end
+06.22.12
+No file to fetch
+--end
+06.29.12
+No file to fetch
+--end
+07.05.12
+No file to fetch
+--end
+07.05.12
+No file to fetch
+--end
+07.05.12
+Successfully copied Outbound to crypt file
+Error decrypting file
+Added 0 records to database
+--end
+07.05.12
+Successfully copied MidwoodAnnuityExport20120628.CSV.pgp to crypt file
+Added 20547 records to database
+--end
+07.06.12
+No file to fetch
+--end
+07.13.12
+No file to fetch
+--end
+07.20.12
+Successfully copied MidwoodAnnuityExport20120712.CSV.pgp to crypt file
+Added 20549 records to database
+--end
+07.27.12
+No file to fetch
+--end
+08.03.12
+No file to fetch
+--end
+08.10.12
+No file to fetch
+--end
+08.17.12
+No file to fetch
+--end
+08.24.12
+Successfully copied MidwoodAnnuityExport20120719.CSV.pgp to crypt file
+Added 20549 records to database
+--end
+08.31.12
+Successfully copied MidwoodAnnuityExport20120816.CSV.pgp to crypt file
+Added 12952 records to database
+--end
+09.07.12
+No file to fetch
+--end
+09.14.12
+Successfully copied MidwoodAnnuityExport20120712.CSV.pgp to crypt file
+Added 20549 records to database
+--end
+09.21.12
+No file to fetch
+--end
+09.28.12
+Successfully copied MidwoodAnnuityExport20120927.CSV.pgp to crypt file
+Added 20552 records to database
+--end
+10.05.12
+Successfully copied MidwoodAnnuityExport20121004.CSV.pgp to crypt file
+Added 20561 records to database
+--end
+10.12.12
+Successfully copied MidwoodAnnuityExport20121011.CSV.pgp to crypt file
+Added 15947 records to database
+--end
+10.19.12
+Successfully copied MidwoodAnnuityExport20121018.CSV.pgp to crypt file
+Added 12872 records to database
+--end
+10.26.12
+Successfully copied MidwoodAnnuityExport20121025.CSV.pgp to crypt file
+Added 20563 records to database
+--end
+11.02.12
+Successfully copied MidwoodAnnuityExport20121101.CSV.pgp to crypt file
+Added 20564 records to database
+--end
+11.09.12
+Successfully copied MidwoodAnnuityExport20121108.CSV.pgp to crypt file
+Added 20617 records to database
+--end
+11.16.12
+Successfully copied MidwoodAnnuityExport20121115.CSV.pgp to crypt file
+Added 20714 records to database
+--end
+11.23.12
+Successfully copied MidwoodAnnuityExport20121115.CSV.pgp to crypt file
+Added 20714 records to database
+--end
+11.30.12
+Successfully copied MidwoodAnnuityExport20121129.CSV.pgp to crypt file
+Added 20726 records to database
+--end
+12.07.12
+Successfully copied MidwoodAnnuityExport20121206.CSV.pgp to crypt file
+Added 20723 records to database
+--end
+12.14.12
+Successfully copied MidwoodAnnuityExport20121206.CSV.pgp to crypt file
+Added 20723 records to database
+--end
+12.21.12
+Successfully copied MidwoodAnnuityExport20121220.CSV.pgp to crypt file
+Added 20949 records to database
+--end
+12.28.12
+Successfully copied MidwoodAnnuityExport20121227.CSV.pgp to crypt file
+Added 20949 records to database
+--end
+01.04.13
+Successfully copied MidwoodAnnuityExport20130103.CSV.pgp to crypt file
+Added 20949 records to database
+--end
+01.11.13
+Successfully copied MidwoodAnnuityExport20130110.CSV.pgp to crypt file
+Added 20949 records to database
+--end
+01.18.13
+Successfully copied MidwoodAnnuityExport20130117.CSV.pgp to crypt file
+Added 20949 records to database
+--end
+01.25.13
+Successfully copied MidwoodAnnuityExport20130124.CSV.pgp to crypt file
+Added 20959 records to database
+--end
+02.01.13
+Successfully copied MidwoodAnnuityExport20130131.CSV.pgp to crypt file
+Added 20959 records to database
+--end
+02.08.13
+Successfully copied MidwoodAnnuityExport20130207.CSV.pgp to crypt file
+Added 20959 records to database
+--end
+02.15.13
+Successfully copied MidwoodAnnuityExport20130214.CSV.pgp to crypt file
+Added 20962 records to database
+--end
+02.22.13
+Successfully copied MidwoodAnnuityExport20130221.CSV.pgp to crypt file
+Added 20964 records to database
+--end
+03.01.13
+Successfully copied MidwoodAnnuityExport20130228.CSV.pgp to crypt file
+Added 20964 records to database
+--end
+03.08.13
+Successfully copied MidwoodAnnuityExport20130307.CSV.pgp to crypt file
+Added 20964 records to database
+--end
+03.15.13
+Successfully copied MidwoodAnnuityExport20130314.CSV.pgp to crypt file
+Added 20964 records to database
+--end
+03.22.13
+Successfully copied MidwoodAnnuityExport20130321.CSV.pgp to crypt file
+Added 20964 records to database
+--end
+03.29.13
+Successfully copied MidwoodAnnuityExport20130328.CSV.pgp to crypt file
+Added 20964 records to database
+--end
+04.05.13
+Successfully copied MidwoodAnnuityExport20130404.CSV.pgp to crypt file
+Added 20963 records to database
+--end
+04.12.13
+Error establishing FTP connection
+--end
+04.19.13
+Error establishing FTP connection
+--end
+04.26.13
+Error establishing FTP connection
+--end
+05.03.13
+Error establishing FTP connection
+--end
+05.10.13
+Error establishing FTP connection
+--end
+05.17.13
+Error establishing FTP connection
+--end
+05.24.13
+Error establishing FTP connection
+--end
+05.31.13
+Error establishing FTP connection
+--end
+06.07.13
+Error establishing FTP connection
+--end

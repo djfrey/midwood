@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="expires" content="0">    
+
+    <base href="/">
+    <title>Midwood Financial Services, Inc.</title>
+    
+
+    <!-- /JS -->
+	
+    <!-- Styles -->
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	 <!-- Google font -->
+    <link href="./assets/css/googlefonts.css" rel="stylesheet">
+
+	<link href="./assets/css/screen.css" rel="stylesheet" media="screen" type="text/css" >
+	<link href="./assets/css/floating-labels.css" rel="stylesheet" media="screen" type="text/css" >
+    
+    <!--[if lt IE 9]>
+	    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<div id="vue">	
+	<alert :alert="alert"></alert>
+	<router-view></router-view>	
+</div>
+
+<!-- JS -->
+<!-- core-js -->
+<script src="./assets/scripts/core-js.min.js"></script>
+
+<!-- Font Awesome -->
+<script src="./assets/scripts/font-awesome.js"></script>
+<!-- Bootstrap -->
+<script src="./assets/scripts/jquery-3.3.1.slim.min.js"></script>
+<script src="./assets/scripts/popper.min.js"></script>
+<script src="./assets/scripts/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Vue development -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<!-- Vue production -->
+<script src="./assets/scripts/vue.min.js"></script>
+<!-- Axios -->
+<script src="./assets/scripts/axios.min.js"></script>
+<!-- Cookies -->
+<script src="./assets/scripts/vue-cookies.min.js"></script>
+<!-- Input masking -->
+<script src="./assets/scripts/v-mask.min.js"></script>
+<!-- Vue loader -->
+<script src="./assets/scripts/httpVueLoader.js"></script>
+<!-- CDNJS :: Sortable (https://cdnjs.com/) -->
+<script src="./assets/scripts/sortable.min.js"></script>
+<!-- CDNJS :: Vue.Draggable (https://cdnjs.com/) -->
+<script src="./assets/scripts/vue-draggable.min.js"></script>
+<!-- Vue router -->
+<script src="./assets/scripts/vue-router.min.js"></script>
+<!-- Recaptcha -->
+<script src="./assets/scripts/vue-recaptcha.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script> 
+
+<!-- Firebase -->
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="./assets/scripts/firebase-app.js"></script>
+<script src="./assets/scripts/firebase-auth.js"></script>
+<script src="./assets/scripts/firebase-firestore.js"></script>
+<script src="./assets/scripts/firebase-storage.js"></script>
+<!-- VueFire (vue firebase) -->
+<script src="./assets/scripts/vuefire.min.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146529939-1"></script>
+<script>    
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146529939-1');
+</script>
+
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>

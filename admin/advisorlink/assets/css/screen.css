@@ -1,0 +1,95 @@
+html {
+	margin-top: 0px !important;
+}
+html, body {
+  height: 100%;    
+}
+#main {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0px 0px -60px 0px;
+  /* Pad bottom by footer height */
+  padding: 0px 0 80px;
+}
+
+.navbar .navbar-brand {
+	padding: 0px 20px 0px 0px;
+	line-height: 1.0em;
+	font-size: 18px;
+	color: #FFF;
+	font-family: UniversLightCondensed;
+}
+
+.navbar .navbar-brand a {
+	font-size: 24px;	
+	color: #FFF;
+	text-transform: uppercase;
+}
+
+.navbar .navbar-brand a:hover {
+	text-decoration: none;
+}
+
+.navbar .navbar-brand a span.bold {
+	font-family: UniversCondensed;	
+	font-weight: bold;
+}
+
+footer.navbar {	
+	font-family: UniversCondensed;	
+	color: #FFF;
+	height: 60px;
+	padding: 15px 0px 0px 0px;
+}
+
+footer.navbar .navbar-brand span{	
+	font-size: 24px;
+	padding-left: 18px;
+}
+
+
+footer.navbar a {
+	color: #FFF;	
+}
+
+
+/* Set the fixed height of the footer here */
+.footer {
+  height: 60px;
+  margin-top: 20px;
+  background-color: #C00;
+}
+
+.footer .container {
+	padding-top: 15px;
+	color: #FFF;
+	background-color: #C00;
+	font-family: UniversLightCondensed;
+	font-size: 1.2em;
+}
+
+.footer .container img {padding-right: 15px; }
+.footer .container a { color: #FFF; }
+.footer .container .college { 
+	display: inline-block;   	
+	vertical-align: middle;
+    font-size: 1.3em;
+}
+
+/*.footer .container .contact {
+	
+}*/
+
+.environment {
+	background-color: #FDD726;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;	
+}
+
+.form-control {
+	color: #000;
+}
+
+

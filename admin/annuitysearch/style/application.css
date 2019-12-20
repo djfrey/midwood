@@ -1,0 +1,158 @@
+/*@import url("default.css");*/
+@import url("/admin/annuitysearch/lib/js/external/alerts/jquery.alerts.css");
+@import url("/admin/annuitysearch/lib/js/external/filetree/jqueryFileTree.css");
+@import url("/admin/annuitysearch/lib/js/external/autocomplete/jquery.autocomplete.css");
+@import url("ext.css");
+
+body {margin: 10px; padding: 0px; font-family:Tahoma, Arial, Helvetica, sans-serif; font-size: 0.75em; }
+
+#logo {height: 106px; padding-top: 11px;}
+#logo h1 {width: 501px; height: 87px; padding: 0px; margin: 0px auto; display: block; background: transparent url(/assets/images/midwood_logo.png) top left no-repeat; text-indent: -9999px;}
+
+#logo.small {height: 80px;}
+#logo.small h1 {width: 376px; height: 64px; background: transparent url(/assets/images/midwood_logo.png) top left no-repeat;}
+
+#pagewrapper {margin: 0px auto; width: 980px;}
+#contentwrapper {background: #FFF; float: left; text-align: left; width: 770px; padding: 0px;}
+#left {float: left; background: #FFF; width: 200px; padding: 0px 0px 0px 10px;}
+#content p {margin: 0px 0px 10px 5px; color: #000; line-height: 1.6em;} 
+#content .title {margin: 0px;}
+
+.panelfloat {position: relative; top: 0px;}
+
+
+h2 {margin-top: 0px; margin-bottom: 5px; color: #013467; padding: 3px; border: 1px solid #CCC; background-color: #EEE;}
+
+#footer {height: 25px; width: 960px; margin: 0px 0px 10px 10px; clear: both;}
+	#footer .copyright {float: left; color: #000; padding: 5px 0px 0px 10px; }
+	#footer .links {float: right; padding: 5px 10px 0px 0px; color: #000;}
+	#footer .links ul {list-style-type: none; margin: 0px; padding: 0px; }
+	#footer .links li {text-decoration: underline; float: left; padding-left: 10px;}
+
+.wait {text-indent: 20px; height: 20px; padding-top: 4px; background: url(/img/spinner.gif) 0px center no-repeat;}
+.wait:after {content: "Please wait...";}
+.account-title .wait {background: url(/img/spinner.gif) 10px 6px no-repeat;}
+
+.heading {font-size: 1.6em; font-weight: bold; margin: 0px 0px 4px 0px;}
+
+#login {width: 400px; font-size: 1.4em; margin: 5px auto;}
+#login legend {font-weight: bold; font-size: 1.1em; color: #10397B;}
+#login label {width: 130px; float: left;}
+#login .text { width: 200px; float: left;}
+#login div {clear: both; padding: 5px;}
+
+.dialog {display: none;}
+.dialog .content {font-size: 0.9em;}
+.dialog div {clear: both; margin: 3px 0px;}
+.dialog label {display: block; padding: 2px 5px; margin-bottom: 5px; font-weight: bold; color: #FFF; background-color: #69C; border: 1px solid #6893be;}
+.dialog label.inline {float: left; margin-right: 10px; width: 170px; text-align: right;}
+
+.panel {margin: 0px 0px 10px 0px; width: 190px; padding: 0px 0px 3px 0px; border: 1px solid #CCC;}
+.panel p {margin: 10px 5px;}
+.panel .title {font-size: 1.3em; margin: 4px; padding: 4px; color: #013467; background-color: #DDD;}
+.panel .title.tools {text-indent: 24px; border: 1px solid #CCC; background: #DDD url(/img/icon/16x16/w/wrench.png) 4px center no-repeat;}
+.panel ul {list-style-type: none; margin: 0px; padding: 0px;}
+.panel ul li {margin: 4px 2px 4px 2px; padding: 4px 0px 4px 8px; cursor:pointer; }
+.panel ul li.active, .panel ul li.current {background-color: #EEE !important;}
+.panel ul li.open {background-color: #DDD !important;}
+.panel a {color: #000; text-decoration: none;}
+.panel input {margin: 0px 0px 5px 10px;}
+
+ul.item_list {list-style-type: none; margin: 0px; padding: 0px;}
+ul.item_list li {cursor: pointer; padding: 4px 0px 4px 4px;}
+ul.item_list li.active, ul.item_list li.current {background-color: #EEE;}
+
+ul li.disabled {cursor: default; color: #999; background-color: #EEE !important;}
+
+.main_link {font-size: 1.6em; font-weight: normal; cursor: pointer; margin: 0px; padding: 0px 0px 10px 0px;}
+.main_link img {vertical-align: middle; padding-right: 5px;}
+
+.element-expanded {background: url(/img/icon/16x16/b/bullet_toggle_minus.png) 0px center no-repeat;}
+.element-collapsed {background: url(/img/icon/16x16/b/bullet_toggle_plus.png) 0px center no-repeat;}
+
+.account-list, .carrier-list {margin: 0px; padding: 0px;}
+.account-list ul, .carrier-list ul {margin: 0px 3px; padding: 0px;}
+.account-list li, .carrier-list li {border: 1px solid #CCC; background-color: #FFF; margin: 8px 0px;}
+.account-list ul li, .carrier-list ul li {border: 1px solid #CCC; background-color: #FFF; margin: 3px 0px;}
+
+.account-list, .carrier-list, .carrier-list ul {list-style-type: none;}
+.account-list li div, .carrier-list li div {cursor: pointer;}
+
+.carrier-list li.assigned, .product-list li.assigned {border: 1px solid #65D268;}
+
+.link-list li.assigned {border: 1px solid #65D268; background-color: #E9FFE7;}
+
+li.selected {border: 1px solid #69D !important; background-color: #EEE !important;}
+li.selected div.selected {color: #FFF; background-color: #8BE;}
+
+.account-title div, .carrier-title div, .product-title div {padding-left: 20px;}
+
+.account-title > div {font-size: 1.4em;}
+.carrier-title > div {font-size: 1.3em;}
+.product-title > div {font-size: 1.2em;}
+.link-title > div {font-size: 1.1em; padding: 2px 0px 2px 2px;} 
+.link-title > div {padding-left: 20px;}
+
+.filetree {border: 1px solid #CCC; height: 170px; overflow: hidden; overflow-y: scroll; padding: 5px; clear: both;}
+#ft {width: 755px; height: 300px; }
+
+.info, .warning, .error, .success, .danger, .wait {height: 20px; text-indent: 24px; padding-top: 4px; margin-bottom: 4px;}
+
+
+.warning {border: 1px solid #F9DD34; background: #FBF5D0 url(/img/icon/16x16/e/error.png) 5px center no-repeat;}
+.error {border: 1px solid #CD0A0A; background: #FEF1EC url(/img/icon/16x16/e/exclamation.png) 5px center no-repeat;}
+.success {border: 1px solid #65D268; background: #E9FFE7 url(/img/icon/16x16/a/accept.png) 5px center no-repeat;}
+.danger {border: 1px solid #CD0A0A; background: #FEF1EC url(/img/icon/16x16/c/cancel.png) 5px center no-repeat; font-weight: bold; color: #660000;}
+
+.login.error {width: 420px; margin: 0px auto;}
+
+.account {margin: 5px; padding: 5px; border: 1px solid #DDD;}
+.account .title {height: 18px; margin: 0px 0px 4px 0px; padding: 4px 8px; color: #000; background-color: #DDD; border: 1px solid #CCC;}
+.account .label {width: 120px; text-align: top; padding: 2px 4px; margin: 1px 0px; background-color: #EEE; border: 1px solid #DDD;}
+.account .data  {padding: 3px;}
+
+#search_form, #upload_form {border: 1px solid #CCC;}
+#search_form form {padding-bottom: 4px;}
+#upload_form {margin-bottom: 10px;}
+
+#account_result .export {font-size: 1.2em; margin-bottom: 5px;}
+#account_result h3.result {font-size: 1.5em; margin: 4px;}
+
+.remove { color: #F00; cursor: pointer; padding: 3px;}
+
+#add_criteria, #search_accounts, #upload_file, #upload_submit {font-size: 1.4em; text-indent: 4px;}
+#assign_add:hover, #assign_remove:hover, #assign_save:hover, #add_criteria:hover, #search_accounts:hover, #upload_submit:hover {cursor: pointer; color: #4174A7; text-decoration: underline;}
+
+#add_criteria {padding-top: 5px; padding-bottom: 5px; }
+#add_criteria i { color: #0F0; }
+#search_accounts {padding-top: 5px; padding-bottom: 5px; border-top: 1px solid #CCC; }
+#search_accounts i { color: #00F; }
+#export_csv {font-size: 1.2em; padding: 5px 0px; border-bottom: 1px solid #CCC;}
+#export_csv a:hover{text-decoration: none;}
+
+#upload_file {padding-top: 5px; padding-bottom: 5px; background: url(/img/icon/16x16/p/page_white_add.png) 4px center no-repeat;}
+#upload_submit {padding-top: 5px; padding-bottom: 5px; border-top: 1px solid #CCC; background: #EEE url(/img/icon/16x16/d/database_go.png) 4px center no-repeat;}
+
+.clause {margin: 5px 0px; clear: both;}
+
+#assigned, #unassigned {width: 365px; margin: 10px;}
+
+#assign_add, #assign_remove, #assign_save, #result_back, #result_next { padding: 3px 8px 3px 8px; margin: 0px auto; font-size: 1.4em; border: 1px solid #DDD;}
+
+#result_next, #result_back { margin: 0px;}
+#result_next:hover, #result_back:hover {cursor: pointer;}
+
+.assignment {float: left; margin-top: 10px;}
+.assignment div {text-align: center;}
+
+.debug {border: 1px dashed #900; margin: 10px 0px; padding: 5px; background-color: #FEF1EC;}
+.debug .title {font-weight: bold;}
+
+table.report {border: 1px solid #CCC; margin: 5px 0px 0px 0px;}
+
+h3.report_title {margin: 0px; padding: 0px 0px 5px 0px; text-decoration: underline; font-size: 1.8em; font-weight: normal;}
+span.report_button {border: 1px solid #DDD; background-color: #EEE; padding: 3px; margin: 3px;}
+
+table.report th {border: 1px solid #CCC; background-color: #DDD; padding: 4px; font-size: 1.2em;}
+table.report td {border: 1px solid #DDD; padding: 4px;}
+.fg-button {outline: 0; margin:0 4px 0 0; padding: .4em 1em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
