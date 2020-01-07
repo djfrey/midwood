@@ -52,11 +52,13 @@ module.exports = {
                 //Get the firestore collection, create the nested array of objects			
 				var d = response[0] || [];														
 				for (i = 0; i < d.length; i++) {
-					let x = d[i];
-					//The 'some' variable is set when some of the node's children are assigned
-					x.some = false;						
-					x.children = d.filter(function(y) {
-						return y.parent.id == x.id;							
+                    let x = d[i];
+                    //The 'some' variable is set when some of the node's children are assigned
+                    x.some = false;					
+                    x.children = d.filter(function(y) {
+                        if (y.parent > null) {
+                            return y.parent.id == x.id;
+                        }
 					});						
 					_this.docs.push(x);
 				}			

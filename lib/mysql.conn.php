@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/vhosts/midwoodfinancial.com/app/lib/adodb5/adodb.inc.php');
+require_once('/var/www/vhosts/midwood.com/lib/adodb5/adodb.inc.php');
 
 function db_conn($schema = NULL) {
 	switch ($schema) {

@@ -1,23 +1,26 @@
 <?php
-error_reporting(E_ALL);
+error_reporting(E_ALL ^ E_NOTICE);
 ini_set("display_errors", 1); 
 date_default_timezone_set('America/New_York');
 
-require_once("/var/www/vhosts/midwoodfinancial.com/lib/mysql.conn.php");
-require_once("/var/www/vhosts/midwoodfinancial.com/lib/gpg.inc.php");
+require_once("/var/www/vhosts/midwood.com/lib/mysql.conn.php");
+require_once("/var/www/vhosts/midwood.com/lib/gpg.inc.php");
 
-//$path = "/var/www/vhosts/midwoodfinancial.com/lib/ua/openssl/";
-//set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+/*ob_start();
+include_once('/var/www/vhosts/midwoodfinancial.com/lib/ua/fname.txt');
+$fname = ob_get_contents();
+ob_end_clean();
+*/
 
-//$ftp_server = '12.20.42.142';
 $ftp_server = 'sftp.torchmarkcorp.com';
 $ftp_user_name = 'midwood';
-$ftp_user_pass = 'FeRuDE\4';
+//$ftp_user_pass = 'MW$TMKDATA';
+$ftp_user_pass = '2/hqYprb';
 
 $gpg = '/usr/bin/gpg';
 $passphrase = 'N054a123';
-
-$local_file = '/var/www/vhosts/midwoodfinancial.com/lib/ua/midwood.csv';
+$encrypted_file = '/var/www/vhosts/midwood.com/lib/ua/crypt.csv';
+$unencrypted_file = '/var/www/vhosts/midwood.com/lib/ua/db.csv';
 
 $connection = ssh2_connect($ftp_server, 22);
 ssh2_auth_password($connection, $ftp_user_name, $ftp_user_pass);
@@ -26,29 +29,33 @@ $sftp = ssh2_sftp($connection);
 
 $log = NULL;
 
-if (!$sftp) {     
+if (!$sftp) { 
 	$log .=  sprintf("Error establishing FTP connection%c", 10);
 } else {
-	$handle = opendir("ssh2.sftp://$sftp/midwood/Outbound");
+	$handle = opendir("ssh2.sftp://".intval($sftp)."/midwood/Outbound");
 	while (false != ($file = readdir($handle))){
-	    if ($file != '.' && $file != '..') {
-			//$files[] = $file;
-			$fn = $file;
+	    if ($file != '.' && $file != '..' && $file != 'archive') {
+			$files[$file] = $file;
 		}
 	}
 	
-	if (!$remoteStream = @fopen("ssh2.sftp://$sftp/midwood/Outbound/$fn", 'r')) {
+	krsort($files);
+	
+
+	$fn = array_shift($files);
+		
+	if (!$remoteStream = @fopen("ssh2.sftp://".intval($sftp)."/midwood/Outbound/$fn", 'r')) {
 		throw new Exception("Unable to open remote file: $fn");
     } 
 	
 	// Local stream
-	if (!$localStream = @fopen($local_file, 'w+')) {
+	if (!$localStream = @fopen($encrypted_file, 'w')) {
 		throw new Exception("Unable to open local file for writing");
 	}
 
 	// Write from our remote stream to our local stream
 	$read = 0;
-	$fileSize = filesize("ssh2.sftp://$sftp/midwood/Outbound/$fn");
+	$fileSize = filesize("ssh2.sftp://".intval($sftp)."/midwood/Outbound/$fn");
 	while ($read < $fileSize && ($buffer = fread($remoteStream, $fileSize - $read))) {
 		// Increase our bytes read
 		$read += strlen($buffer);
@@ -58,18 +65,17 @@ if (!$sftp) {
 			throw new Exception("Unable to write to local file");
 		}
 	}
-	
-	//Move file to archive
-	if (copy("ssh2.sftp://$sftp/midwood/Outbound/$fn","ssh2.sftp://$sftp/midwood/Outbound/archive/$fn")) {
-		unlink("ssh2.sftp://$sftp/midwood/Outbound/$fn");
-	}
-	
+
 	// Close our streams
 	fclose($localStream);
 	fclose($remoteStream);	
 
+	$h = fopen('/var/www/vhosts/midwood.com/lib/ua/fname.txt', 'w');
+	fwrite($h, $fn);
+	fclose($h);
+	
 	while (false != ($file = readdir($handle))){
-	    if ($file != '.' && $file != '..' && $file != $fn) {
+	    if ($file != '.' && $file != '..' && $file != 'archive' && $file != $fn) {
 			unlink($file);
 		}
 	}
@@ -77,29 +83,31 @@ if (!$sftp) {
 }
 			
 if ($file === true) {
-	$handle = fopen($local_file, 'r');
+	//exec("echo $passphrase | $gpg --homedir /var/www/.gnupg --no-mdc-warning --no-tty --batch --passphrase-fd 0 -o $unencrypted_file -d $encrypted_file 2>&1 1> /dev/null");
+				
+	$handle = fopen($encrypted_file, 'r');
 				
 	if(!$handle) {
-		throw new Exception("Error decrypting file");
+		$log .= sprintf("Error decrypting file%c", 10);
 	} else {
 		$row = 0;
 		$arr_sql = array();
 		while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
 			if ($row >= 2) {
 				$num = count($data);
-				for ($c=0; $c < $num; $c++) {				
+				for ($c=0; $c < $num; $c++) {
 					add_sql_data($arr_sql[$row], $c, trim($data[$c]));  
 				}
 			}
 			$row++;
 		}
 		fclose($handle);
-		unlink($local_file);
+		unlink($encrypted_file);
+//		unlink($unencrypted_file);
 	}
 	
 	$sql_begin = "INSERT INTO DATA (policy, name, fname, mname, suffix, lname, co1, co2, street1, city, state, zip, phone, dob, ga_name, ga_num, agent_id, agent_name, acct_value, acct_as_of, field_nq, init_deposit, acct_status_code, acct_status_desc, iss_date, field_r) VALUES ";	
-	$tmp_sql = '';
-    
+	
 	foreach ($arr_sql as $row => $stmt) {
 		$tmp_sql .= sprintf("(%s), ", implode(", ", $stmt));
 		if ($row % 1000 == 0 || $row >= count($arr_sql)) { //Every 1000 records or remaining
@@ -109,11 +117,10 @@ if ($file === true) {
 		}
 	}
 	
-	
+			
 	$db = db_conn('@annuity');
 	$db->Execute("TRUNCATE TABLE DATA");
 	foreach ($arr_stmt as $stmt) {
-		//echo $stmt;
 		$db->Execute($stmt);
 	}
 	$db->disconnect();
@@ -121,13 +128,13 @@ if ($file === true) {
 	$log .= sprintf("Added %s records to database%c", count($arr_sql), 10);
 }
 
-/*$log = date("m.d.y").chr(10).$log.'--end'.chr(10);
+$log = date("m.d.y").chr(10).$log.'--end'.chr(10);
 echo $log;
 
-$log_handle = fopen('/var/www/vhosts/midwoodfinancial.com/lib/ua/log.txt', 'a');
+$log_handle = fopen('/var/www/vhosts/midwood.com/lib/ua/log.txt', 'a');
 fwrite($log_handle, $log);
 fclose($log_handle);
-*/
+
 //End
 
 function add_space(&$item, &$key) {
@@ -171,7 +178,7 @@ function add_sql_data(&$arr, $seq, $data) {
 		case '1': //name
 			if ($data != "Not On File") {
 				$arr['NAME'] = add_quotes($data);
-				$tmp = explode(' ', $data);
+				$tmp = split(' ', $data);
 			/*	$arr['FNAME'] = add_quotes(array_shift($tmp));
 				if (strlen($tmp[0]) == 1 && strlen($tmp[1]) == 1) { //Two middle initials
 					$arr['MNAME'] = sprintf('"%s %s"', array_shift($tmp), array_shift($tmp));
@@ -209,9 +216,9 @@ function add_sql_data(&$arr, $seq, $data) {
 			$arr['STREET1'] = add_quotes($data);
 		break;
 		case '5': //City,state zip
-			$tmp = explode(',', $data);
+			$tmp = split(',', $data);
 			$arr['CITY'] = add_quotes(array_shift($tmp));
-			$tmp1 = explode(' ', array_shift($tmp));
+			$tmp1 = split(' ', array_shift($tmp));
 			$arr['STATE'] = add_quotes(array_shift($tmp1));
 			$arr['ZIP'] = add_quotes(array_shift($tmp1));
 		break;
@@ -257,5 +264,4 @@ function add_sql_data(&$arr, $seq, $data) {
 		break;
 	}	
 }
-echo $log;
 ?>

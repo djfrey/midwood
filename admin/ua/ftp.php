@@ -1,9 +1,9 @@
 <?php
-ini_set('display_errors',0);
+//ini_set('display_errors',0);/
 error_reporting(E_ALL ^ E_NOTICE);
 
-require_once("/var/www/vhosts/midwoodfinancial.com/app/lib/mysql.conn.php");
-require_once("/var/www/vhosts/midwoodfinancial.com/app/lib/gpg.inc.php");
+require_once("/var/www/vhosts/midwood.com/lib/mysql.conn.php");
+require_once("/var/www/vhosts/midwood.com/lib/gpg.inc.php");
 
 /*ob_start();
 include_once('/var/www/vhosts/midwoodfinancial.com/lib/ua/fname.txt');
@@ -18,8 +18,8 @@ $ftp_user_pass = '2/hqYprb';
 
 $gpg = '/usr/bin/gpg';
 $passphrase = 'N054a123';
-$encrypted_file = '/var/www/vhosts/midwoodfinancial.com/app/lib/ua/crypt.csv';
-$unencrypted_file = '/var/www/vhosts/midwoodfinancial.com/app/lib/ua/db.csv';
+$encrypted_file = '/var/www/vhosts/midwood.com/lib/ua/crypt.csv';
+$unencrypted_file = '/var/www/vhosts/midwood.com/lib/ua/db.csv';
 
 $connection = ssh2_connect($ftp_server, 22);
 ssh2_auth_password($connection, $ftp_user_name, $ftp_user_pass);
@@ -69,7 +69,7 @@ if (!$sftp) {
 	fclose($localStream);
 	fclose($remoteStream);	
 
-	$h = fopen('/var/www/vhosts/midwoodfinancial.com/lib/ua/fname.txt', 'w');
+	$h = fopen('/var/www/vhosts/midwood.com/lib/ua/fname.txt', 'w');
 	fwrite($h, $fn);
 	fclose($h);
 	
@@ -130,7 +130,7 @@ if ($file === true) {
 $log = date("m.d.y").chr(10).$log.'--end'.chr(10);
 echo $log;
 
-$log_handle = fopen('/var/www/vhosts/midwoodfinancial.com/lib/ua/log.txt', 'a');
+$log_handle = fopen('/var/www/vhosts/midwood.com/lib/ua/log.txt', 'a');
 fwrite($log_handle, $log);
 fclose($log_handle);
 
