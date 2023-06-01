@@ -12,11 +12,11 @@
 						<span v-html="$options.filters.userHighlight(node.name, query)"></span>								
                     </span>                    
                     <span v-if="!ie11" class="name" v-show="node.type == 'file'"><a v-on:click.prevent="download()" href="#"><i class="fa-fw fa-lg" :class="fileClass(node)"></i>
-					<span v-html="$options.filters.userHighlight(fileName, query)"></span>
-					</a></span>    			
-					<span v-if="ie11" class="name" v-show="node.type == 'file'"><a :download="node.filename" :href="node.url" target="_blank"><i class="fa-fw fa-lg" :class="fileClass(node)"></i>
-					<span v-html="$options.filters.userHighlight(fileName, query)"></span>
-					</a></span>    			
+					<span v-html="$options.filters.userHighlight(fileName, query)"></span> 
+					</a></span>
+					<span v-if="ie11" class="name" v-on:click="ie11download(node)" v-show="node.type == 'file'"><a href="#" v-on:click.prevent="ie11download()"><i class="fa-fw fa-lg" :class="fileClass(node)"></i>
+					<span v-html="$options.filters.userHighlight(fileName, query)"></span></a>
+					</span>    			
                     <span class="name" v-show="node.type == 'link'"><a :href="node.url" target="_blank"><i class="fa-fw fa-lg fas fa-link" ></i>
 					<span v-html="$options.filters.userHighlight(node.name, query)"></span>
 					</a></span>					
@@ -56,7 +56,19 @@ module.exports = {
 			ie11: ie11	
 		}	
 	},
-	methods: {		
+	methods: {						
+		ie11download: function() {
+			var _this = this;							
+			var xhr = new XMLHttpRequest();						
+
+			xhr.onload = function(event) {				
+				var blob = new Blob([xhr.response], {type: _this.node.mime});	
+				window.navigator.msSaveBlob(blob, _this.node.filename);
+			};
+			xhr.open('GET', _this.node.url);
+			xhr.responseType = 'blob';
+			xhr.send();
+		},
 		collapse: function() {
 			this.collapsed = !this.collapsed;			
 		},
@@ -77,8 +89,7 @@ module.exports = {
 				this.$parent.bubbleStatus(status);
 			}
 		},
-		download: function() {		
-			console.log(this.node);
+		download: function() {					
 			var _this = this;	
 			var xhr = new XMLHttpRequest();
 			xhr.responseType = 'blob';

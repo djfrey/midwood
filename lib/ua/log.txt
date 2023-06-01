@@ -646,3 +646,6 @@ Added 9699 records to database
 01.06.20
 Added 9699 records to database
 --end
+08.03.22
+Error establishing FTP connection
+--end

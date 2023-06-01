@@ -53,13 +53,13 @@ module.exports = {
                     email: 'summer@midwood.com',
                     telephone: '706'
                 },
-                {                                        
+               /* {                                        
                     name: 'Dee Schmidt',
                     title: 'Internal Account Manager',                    
                     img: 'schmidt.jpg',                    
                     email: 'dschmidt@midwood.com',
                     telephone: '711'
-                },
+                }, */
                 {                                        
                     name: 'Patti Thompson',
                     title: 'Internal Account Manager',                    
@@ -73,13 +73,13 @@ module.exports = {
                     img: 'thorne.jpg',                    
                     email: 'kthorne@midwood.com',
                     telephone: '708'
-                },
-                {                                        
+                }
+               /* {                                        
                     name: 'Kristina Stevens',
                     title: 'Internal Account Manager',                    
                     img: 'kstevens.jpg',                    
                     email: 'kstevens@midwood.com'                    
-                }                
+                } */                
             ],
             rsd: [
                 {                                        
@@ -96,13 +96,13 @@ module.exports = {
                     email: 'cdeery@midwood.com',
                     telephone: '708'
                 },
-                {                                        
+                /*{                                        
                     name: 'Wayne Flanagan',
                     title: 'Regional Sales Director',                    
                     img: 'flanagan.jpg',                    
                     email: 'wflanagan@midwood.com',
                     telephone: '704'
-                },
+                },*/
                 {                                        
                     name: 'Chris Gilmore',
                     title: 'Regional Sales Director',                    
@@ -117,20 +117,20 @@ module.exports = {
                     email: 'mmurphy@midwood.com',
                     telephone: '713'
                 },
-                {                                        
+                /*{                                        
                     name: 'Ryan Noe',
                     title: 'Regional Sales Director',                    
                     img: 'noe.jpg',                    
                     email: 'rnoe@midwood.com'
                     //telephone: '709'
-                },
-                {                                        
+                },*/
+                /*{                                        
                     name: 'Luke Robichaud',
                     title: 'Regional Sales Director',                    
                     img: 'robichaud.jpg',                    
                     email: 'lrobichaud@midwood.com',
                     telephone: '731'
-                },
+                },*/
                 {                                        
                     name: 'Byron Snoddy',
                     title: 'Regional Sales Director',                    

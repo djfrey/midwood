@@ -124,6 +124,7 @@ module.exports = {
 	display: inline-block;
 	max-width: 900px;
 	vertical-align: top;
+	word-wrap: break-word;
 }
 
 .name .fa-stack {

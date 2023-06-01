@@ -26,14 +26,7 @@ module.exports = {
     data: function() {
         return {      
             loggedIn: false, 
-            loading: false,     
-            fsAdvisorlink: [], //The firestore advisorlink collection
-            fsUsers: [],
-            fsStaff: [],
-            docs: [], //The nested array of firestore objects
-            users: [],
-            staff: [],
-            nodes: [],            
+            loading: false,                             
             user: {message: '', iam: [], sales: [], access: []},
             role: '', 
             userCopy: {},
@@ -43,44 +36,8 @@ module.exports = {
         }
     },
     methods: {
-        getData: function() {            
-            this.loading = true;
-            var _this = this;            
-            var docsPromise = this.$bind('fsAdvisorlink',  db.collection('advisorlink').orderBy('sort', 'asc'), {maxRefDepth: 1});            
-            var staffPromise = this.$bind('fsStaff',  db.collection('staff').orderBy('name', 'asc'), {maxRefDepth: 1});    
-            Promise.all([docsPromise, staffPromise]).then(function(response) {	                
-                //Get the firestore collection, create the nested array of objects			
-				var d = response[0] || [];														
-				for (i = 0; i < d.length; i++) {
-                    let x = d[i];
-                    //The 'some' variable is set when some of the node's children are assigned
-                    x.some = false;					
-                    x.children = d.filter(function(y) {
-                        if (y.parent > null) {
-                            return y.parent.id == x.id;
-                        }
-					});						
-					_this.docs.push(x);
-				}			
-				//Set the global root element, the array element that will contain everything else 
-				_this.root = _this.docs.filter(function(n) {
-					return n.id == 'root';
-				});			
-				//Set the root element 
-				_this.rootNode = _this.root[0]; //'root' is the array containing all of our data, use it to recursively find the current folder based on the path								
-                _this.nodes = _this.rootNode.children;  //The children of the current folder are displayed	
-
-                //Get staff
-                let s = response[1] || [];														
-				for (k = 0; k < s.length; k++) {
-                    let b = s[k];					                    
-					_this.staff.push(b);
-                }                
-				_this.loading = false;
-			});
-		},	
         isLoggedIn: function() {			            
-            var l = JSON.parse(localStorage.getItem('cookie')) || {};
+            var l = JSON.parse(localStorage.getItem('cookie')) || {};            
 			if (l.key == 'mw-advisorlink') {                                         
                 this.user = l.user;
                 this.$root.user = {userName: this.user.userName};
@@ -91,11 +48,10 @@ module.exports = {
                 this.$root.user = {};
                 this.role = '';
 				this.loggedIn = false;
-            }     
+            }                 
         }
     },
     mounted: function() {
-        this.getData();	
         this.isLoggedIn();                
         var _this = this;        
         eventBus.$on('logout', function() {            

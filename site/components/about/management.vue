@@ -49,14 +49,15 @@ module.exports = {
                     img: 'marino.jpg',                    
                     email: 'kmarino@midwood.com',
                     bio: '<p>Kevin Marino joined Midwood Financial Services, Inc. in August of 2010 as the Director of Business Development where he was responsible for broadening Midwood’s relationships with financial institutions and independent broker dealers. In 2013, he transitioned to he new role, Director, National Accounts, where he supports Midwood’s Key Account Partner Firms. Mr. Marino brings over twenty years of financial services experience to the firm. A versatile investment professional, Mr. Marino has spent the majority of his career distributing financial products across all channels.</p><p>Prior to joining Midwood, Mr. Marino was a Key Account Manager for MassMutual’s Retirement Income Group where he focused on securing and maintaining relationships with financial institutions, independent broker dealers and regional wirehouses. While at MassMutual, Mr. Marino made countless contributions that resulted in increased distribution for the firm’s fixed, immediate and variable annuity products.</p>'
-                },
+                }
+                /*,
                 {                                        
                     name: 'John Philip Sousa IV',
                     title: 'Director of Business Development, Banks',
                     img: 'sousa.jpg',                    
                     email: 'jsousa@midwood.com',
                     bio: '<p>John Sousa joined Midwood Financial Services, Inc. in June 2013 where he will be responsible for broadening Midwood’s relationships within the bank marketplace.</p><p>Mr. Sousa began his career as a General Agent for Connecticut General Life. After holding positions with a major California savings and loan and a national 403(b) marketing company, he co-founded PAMCO with his partner, Alan Blank.</p><p>As President of PAMCO, Mr. Sousa directed all recruiting, training and sales efforts for the company which employed over 700 sales people in 39 states, rapidly exceeding over a billion dollars of sales per annum.</p><p>Subsequently joining SunAmerica Life as Executive Vice President and member of the Executive Committee and then Mass Mutual, Mr. Sousa successfully expanded those companies into the national bank distribution channel, exceeding expectations for growth and sales. In both companies, he built highly effective and efficient sales wholesaling teams to service the bank clients. His responsibilities included working with product development, actuarial and distribution to help develop leading edge products that would meet consumer needs while generating income to the bank programs.</p><p>Mr. Sousa has been a frequent speaker at industry events and an assistant editor of leading bank publications.</p>'
-                }
+                }*/
             ]
         }
     }

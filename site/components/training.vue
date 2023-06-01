@@ -7,7 +7,7 @@
         <div class="col">
             <h1>Bridging the Gap</h1>
             <p>We offer a wide range of high quality instruction of both vendor-specific and generic training with custom-built curriculum. A key component 
-            in building a solid training curriculum is matching <i>content</i> to <i>needs</i>. 
+            in building a solid training curriculum is matching <i>content</i> to <i>needs</i>.</p> 
 
             <p>By partnering with our financial institutions, we can provide training that will ultimately increase revenue in a fiduciary-compliant manner.</p>
         </div>
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="mt-3 mb-3 col-sm-12 col-md-6 col-lg-3" v-for="f in flyers">
                     <h4>{{f.title}}</h4>
-                    <img class="img-fluid" :src="f.img"></img>
+                    <img class="img-fluid" :src="f.img" />
                 </div>                         
             </div>
         </div>

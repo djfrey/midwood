@@ -69,6 +69,14 @@ module.exports = {
                     "abbreviation": "CT"
                 },
                 {
+                    "name": "Eastern Connecticut",
+                    "abbreviation": "E CT"
+                },
+                {
+                    "name": "Western Connecticut",
+                    "abbreviation": "W CT"
+                },
+                {
                     "name": "Delaware",
                     "abbreviation": "DE"
                 },
@@ -181,6 +189,14 @@ module.exports = {
                     "abbreviation": "NY"
                 },
                 {
+                    "name": "Upstate New York",
+                    "abbreviation": "Upstate NY"
+                },
+                {
+                    "name": "New York City",
+                    "abbreviation": "NYC"
+                },
+                {
                     "name": "North Carolina",
                     "abbreviation": "NC"
                 },
@@ -231,6 +247,14 @@ module.exports = {
                 {
                     "name": "Texas",
                     "abbreviation": "TX"
+                },
+                {
+                    "name": "Texas - Houston area",
+                    "abbreviation": "TXH"
+                },
+                {
+                    "name": "Texas - excluding Houston",
+                    "abbreviation": "TX-H"
                 },
                 {
                     "name": "Utah",

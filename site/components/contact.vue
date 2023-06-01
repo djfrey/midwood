@@ -12,6 +12,7 @@
         <div class="col-lg-6 col-12">
             <p>You can contact us using the form on this page, or directly via the following information.</p>
             <h3 class="border-bottom pb-2">Midwood Financial Services, Inc.</h3>
+            <p><i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> 16133 Ventura Blvd Suite 700 Encino, CA 91436</p>
             <p><i class="fas fa-phone-alt"></i>  1-866-959-1010</p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:info@midwood.com" target="_blank">info@midwood.com</a></p>
             <p><i class="fab fa-linkedin-in"></i> <a href="http://linkedin.com/company/midwood-financial-services" target="_blank">linkedin.com/company/midwood-financial-services</a></p>

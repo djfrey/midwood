@@ -254,20 +254,20 @@ module.exports = {
 				for (j = 0; j < u.length; j++) {
 					let a = u[j];				
 					_this.users.push(a);					
-                }
+				}
 			});  
 		},
 		getDocs: function() {
 			this.loading = true;
 			//Get the main collection from firebase
 			var fsPromise = this.$bind('fsAdvisorlink',  db.collection(this.manage.database).orderBy('sort', 'asc'), {maxRefDepth: 1});	
-			var legacyFs = axios.get('./data/legacy.php');
+//			var legacyFs = axios.get('./data/legacy.php');
 			//Get the route path to determine what we're going to show
 			this.path = this.$route.params.path;
 			var _this = this;
 			this.fsCollection = [];
-			Promise.all([fsPromise, legacyFs]).then(function(response) {	
-				_this.legacy = response[1].data;					
+			Promise.all([fsPromise]).then(function(response) {	
+				//_this.legacy = response[1].data;					
 				//Get the firestore collection, create the nested array of objects			
 				var fs = response[0] || [];														
 				for (var i = 0; i < fs.length; i++) {
@@ -355,7 +355,7 @@ module.exports = {
 		},
 		testName: function(node, count) {
 			var tn;
-			var n = node.name;
+			var n = node.name.replace(/\\|\//g, ''); //Remove all slashes
 			var ext = '';
 			if (node.type == 'file' && node.name == '') { //For files that haven't been renamed from the default name, use the file name as the test string without the extension
 				var f = node.filename.split('.');								
@@ -606,7 +606,7 @@ module.exports = {
 			return this.nodes.length < 2 || this.deleting.id > '';
 		}
 	},
-	mounted() {
+	mounted() {		
 		this.getUsers();
 		this.getDocs();	
 

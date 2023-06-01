@@ -317,7 +317,7 @@ module.exports = {
                         return u.userName == i;
                     });
                     if (exists) {
-                        valid = false;
+                        valid = false;                        
                         error = 'That username is being used by another user';
                     }                      
                     if (i == '') {

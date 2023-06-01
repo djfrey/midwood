@@ -17,7 +17,7 @@
     </div>
     <div class="row p-3">
         <div class="col text-center">
-            <h5>Midwood’s team of seasoned professionals work effectively to meet your needs.</h5>
+            <h5>Midwood's team of seasoned professionals work effectively to meet your needs.</h5>
             <h5>This effort begins with a world class executive-level team that has a industry-proven track record of success.</h5>
         </div>
     </div>

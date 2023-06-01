@@ -1,6 +1,6 @@
 <template>
 	<div id="node-edit" v-on:keyup.enter="update()" :class="{'edit-show': $parent.editing, 'edit-hide': !$parent.editing}">
-		<div class="edit-container" >
+		<div class="edit-container" >			
 			<div class="title">
 				<!-- Title for link, folder and file -->
 				<span v-if="node.type != 'files'" class="h4">{{title}} properties</span>
@@ -60,12 +60,17 @@
 						<span>Download</span>			
 					</button>
 				</div>
-				<div><i class="fa-fw" :class="$parent.fileClass(node)" ></i> {{node.filename}}</div>			
+				<div><i class="fa-fw" :class="$parent.fileClass(node)" ></i> {{node.filename}}</div>	
+				<hr />				
+				<div>
+					<span id="fileurl" style="display: none">{{node.url}}</span>
+					<button type="button" v-on:click="copyUrl()" class="btn btn-sm btn-primary"><i class="fas fa-external-link-alt"></i> Copy direct URL</button>
+				</div>		
 			</div>			
-			<button type="button" :disabled="saving || nodeCopy.name.trim() == '' " class="btn btn-sm btn-success" v-on:click="update()">
+			<button type="button" :disabled="saving || nodeCopy.name.trim() == '' || node.name.trim() == nodeCopy.name.trim() " class="btn btn-sm btn-success" v-on:click="update()">
 				<i class="fas fa-save"></i> <span v-if="!saving">Save</span><span v-else>Saving</span>			
 			</button>			
-		</div>
+		</div>		
 	</div>
 </template>
 <script>
@@ -87,22 +92,32 @@ module.exports = {
 			saving: false
 		}
 	},
-	methods: {		
+	methods: {	
+		copyUrl() {
+			var $temp = $("<input>");
+  			$("body").append($temp);
+  			$temp.val($("#fileurl").text()).select();
+  			document.execCommand("copy");
+  			$temp.remove();
+			this.$root.setAlert(true, 'URL copied to the clipboard', 'alert-success');		
+		},
 		update: function() {
 			if (this.nodeCopy.name.trim() == '') {
 				return;
 			}
 			var params = {};
+
+			params.name = this.$parent.testName(this.nodeCopy, 0);
+			
 			switch (this.node.type) {
 				case 'folder': 
-					params.name = this.nodeCopy.name;					
+					//params.name = this.nodeCopy.name;					
 				break;
 				case 'file':
-					params.name = this.nodeCopy.name;
-
+					//params.name = this.nodeCopy.name;
 				break;
 				case 'link':
-					params.name = this.nodeCopy.name;
+					//params.name = this.nodeCopy.name;
 					params.url = this.nodeCopy.url;
 				break;
 			}

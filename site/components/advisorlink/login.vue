@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-label-group input-group">
-                            <input type="text" name="userName" class="form-control" placeholder="User name" v-model="login.name" />
+                            <input type="text" name="userName" class="form-control" placeholder="User name" v-model="login.username" />
                             <label>User name</label>						
                         </div>
                     </div>
@@ -40,62 +40,26 @@
 module.exports = {   
     data: function() {
         return {
-            login: {name: '', password: ''},
+            login: {username: '', password: ''},
             error: '',
             errKey: 0            
         }
     },
     methods: {
-         signIn: function() {            
+        signIn: function() {    
             this.error = '';
             this.errKey += 1;                              
             var _this = this;
-            _this.login.name = _this.login.name.trim();
-            _this.login.password = _this.login.password.trim();
-            var up = this.$bind('fsUsers', db.collection('users').where('userName', '==', _this.login.name));
-            var sp = this.$bind('fsStaff', db.collection('staff').where('userName', '==', _this.login.name));      
-            Promise.all([up, sp]).then(function(response) {	                                    
-                let u = response[0] || [];
-                let s = response[1] || [];	
-                if (u.length == 0 && s.length == 0) {
-                    //Invalid user
-                    _this.error = "You've entered an invalid username.";
+            _this.login.username = _this.login.username.trim();
+            _this.login.password = _this.login.password.trim();  
+            axios.get('/site/data/firebase.auth.php', {params: {'username': _this.login.username, 'password': _this.login.password}})
+            .then(function(r) {
+                response = r.data;                
+                if (response.error > '') {                    
+                    _this.error = response.error;
                 } else {
-                    //Login is a user
-                    if (u.length > 0) {                
-                        if (u[0].password == _this.login.password) {
-                            var email = 'user@midwood.com';
-                            var password = '4dy174KmAZU7Qqw';
-                            firebase.auth().signInWithEmailAndPassword(email, password).then(function() {                        
-                                //Valid user, set cookie                        
-                                localStorage.setItem('cookie', JSON.stringify({key: 'mw-advisorlink', user: u[0], role: 'user'}));                                                            
-                                _this.$root.user = {userName: u[0].userName};                                             
-                                _this.$parent.isLoggedIn();
-                            }).catch(function(error) {
-                                _this.error = error.message;                    
-                            });                    
-                        } else {
-                            _this.error = "You've entered an invalid password.";
-                        }
-                    }			
-                	//Login is staff								
-                    if (s.length > 0) {
-                        if (s[0].password == _this.login.password) {
-                            var email = 'aladmin@midwood.com';
-                            var password = 'ajWG057Zo28O1Jy';
-                            firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-                                //Valid user, set cookie
-                                localStorage.setItem('cookie', JSON.stringify({key: 'mw-advisorlink', user: s[0], role: s[0].role}));                                
-                                _this.$root.user = {userName: s[0].userName};
-                                console.log(localStorage.getItem('cookie'));
-                                _this.$parent.isLoggedIn();
-                            }).catch(function(error) {                        
-                                _this.error = error.message;                    
-                            });  
-                        } else {
-                            _this.error = "You've entered an invalid password.";
-                        }   
-                    }				
+                    localStorage.setItem('cookie', JSON.stringify({key: 'mw-advisorlink', user: response.user, role: response.user.role})); 
+                    _this.$parent.isLoggedIn();
                 }
             });
         }

@@ -1,0 +1,10 @@
+{
+    "require": {
+        "grpc/grpc": "^v1.1.0",
+        "google/protobuf": "^3.11",
+        "google/cloud-firestore": "^1.10",
+        "kreait/firebase-php": "^4.35",
+        "spatie/flysystem-dropbox": "^1.2",
+        "league/flysystem-rackspace": "^1.0"
+    }
+}

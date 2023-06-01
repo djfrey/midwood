@@ -29,7 +29,12 @@
 </template>
 <script>
 module.exports = {
-    props: ['data']
+    props: ['data'],
+    data() {
+        return {
+            ie11: ie11
+        }
+    }
 }
 </script>
 <style scoped>

@@ -1,5 +1,5 @@
 <?php
-//ini_set('display_errors',0);/
+ini_set('display_errors',0);
 error_reporting(E_ALL ^ E_NOTICE);
 
 require_once("/var/www/vhosts/midwood.com/lib/mysql.conn.php");
@@ -14,12 +14,12 @@ ob_end_clean();
 $ftp_server = 'sftp.torchmarkcorp.com';
 $ftp_user_name = 'midwood';
 //$ftp_user_pass = 'MW$TMKDATA';
-$ftp_user_pass = '2/hqYprb';
+$ftp_user_pass = 'Xj6LBa)X';
 
 $gpg = '/usr/bin/gpg';
 $passphrase = 'N054a123';
-$encrypted_file = '/var/www/vhosts/midwood.com/lib/ua/crypt.csv';
-$unencrypted_file = '/var/www/vhosts/midwood.com/lib/ua/db.csv';
+$localFile = '/var/www/vhosts/midwood.com/admin/ua/file/file.csv';
+
 
 $connection = ssh2_connect($ftp_server, 22);
 ssh2_auth_password($connection, $ftp_user_name, $ftp_user_pass);
@@ -38,19 +38,15 @@ if (!$sftp) {
 		}
 	}
 	
-	krsort($files);
-	
-
+	krsort($files);	
 	$fn = array_shift($files);
-		
-	if (!$remoteStream = @fopen("ssh2.sftp://".intval($sftp)."/midwood/Outbound/$fn", 'r')) {
-		throw new Exception("Unable to open remote file: $fn");
-    } 
 	
+	if (!$remoteStream = @fopen("ssh2.sftp://".intval($sftp)."/midwood/Outbound/$fn", 'r')) {
+		die("Unable to open remote file: $fn");
+	} 	
+
 	// Local stream
-	if (!$localStream = @fopen($encrypted_file, 'w')) {
-		throw new Exception("Unable to open local file for writing");
-	}
+	$localStream = @fopen($localFile, 'w') or die(print_r(error_get_last(),true));
 
 	// Write from our remote stream to our local stream
 	$read = 0;
@@ -61,49 +57,46 @@ if (!$sftp) {
 
 		// Write to our local file
 		if (fwrite($localStream, $buffer) === FALSE) {
-			throw new Exception("Unable to write to local file");
+			die("Unable to write to local file");
 		}
 	}
+
 
 	// Close our streams
 	fclose($localStream);
 	fclose($remoteStream);	
 
-	$h = fopen('/var/www/vhosts/midwood.com/lib/ua/fname.txt', 'w');
+	/*$h = fopen('/var/www/vhosts/midwood.com/lib/ua/fname.txt', 'w');
 	fwrite($h, $fn);
-	fclose($h);
-	
+	fclose($h);*/
+
 	while (false != ($file = readdir($handle))){
 	    if ($file != '.' && $file != '..' && $file != 'archive' && $file != $fn) {
 			unlink($file);
 		}
 	}
 	$file = true;
-}
-			
-if ($file === true) {
+
 	//exec("echo $passphrase | $gpg --homedir /var/www/.gnupg --no-mdc-warning --no-tty --batch --passphrase-fd 0 -o $unencrypted_file -d $encrypted_file 2>&1 1> /dev/null");
+
+
+	$handle = @fopen($localFile, 'r') or die(print_r(error_get_last(),true));
 				
-	$handle = fopen($encrypted_file, 'r');
-				
-	if(!$handle) {
-		$log .= sprintf("Error decrypting file%c", 10);
-	} else {
-		$row = 0;
-		$arr_sql = array();
-		while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-			if ($row >= 2) {
-				$num = count($data);
-				for ($c=0; $c < $num; $c++) {
-					add_sql_data($arr_sql[$row], $c, trim($data[$c]));  
-				}
+	$row = 0;
+	$arr_sql = array();
+	while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {		
+		if ($row >= 2) {
+			$num = count($data);
+			for ($c=0; $c < $num; $c++) {
+				add_sql_data($arr_sql[$row], $c, trim($data[$c]));  
 			}
-			$row++;
 		}
-		fclose($handle);
-		unlink($encrypted_file);
-//		unlink($unencrypted_file);
+		$row++;
 	}
+
+	fclose($handle);	
+	unlink($localFile);
+
 	
 	$sql_begin = "INSERT INTO DATA (policy, name, fname, mname, suffix, lname, co1, co2, street1, city, state, zip, phone, dob, ga_name, ga_num, agent_id, agent_name, acct_value, acct_as_of, field_nq, init_deposit, acct_status_code, acct_status_desc, iss_date, field_r) VALUES ";	
 	
@@ -114,9 +107,11 @@ if ($file === true) {
 			$arr_stmt[] = sprintf("%s %s;", $sql_begin, $tmp_sql);
 			$tmp_sql = '';
 		}
-	}
-	
-			
+	}				
+
+
+
+
 	$db = db_conn('@annuity');
 	$db->Execute("TRUNCATE TABLE DATA");
 	foreach ($arr_stmt as $stmt) {
@@ -147,7 +142,7 @@ function add_quotes(&$data) {
 	return $data;
 }
 
-function add_sql_data(&$arr, $seq, $data) {
+function add_sql_data(&$arr, $seq, $data) {	
 	$arr_ga = array(
 		'00305' => 'Key Investment Services LLC', 
 		'01464' => 'FirstTrust Financial Resources',
@@ -174,11 +169,12 @@ function add_sql_data(&$arr, $seq, $data) {
 	switch($seq) {
 		case '0': //id
 			$arr['POLICY'] = add_quotes($data);
-		case '1': //name
+		break;
+			case '1': //name
 			if ($data != "Not On File") {
 				$arr['NAME'] = add_quotes($data);
-				$tmp = split(' ', $data);
-			/*	$arr['FNAME'] = add_quotes(array_shift($tmp));
+			/*	$tmp = explode(' ', $data);
+				$arr['FNAME'] = add_quotes(array_shift($tmp));
 				if (strlen($tmp[0]) == 1 && strlen($tmp[1]) == 1) { //Two middle initials
 					$arr['MNAME'] = sprintf('"%s %s"', array_shift($tmp), array_shift($tmp));
 				} else {
@@ -215,9 +211,9 @@ function add_sql_data(&$arr, $seq, $data) {
 			$arr['STREET1'] = add_quotes($data);
 		break;
 		case '5': //City,state zip
-			$tmp = split(',', $data);
+			$tmp = explode(',', $data);
 			$arr['CITY'] = add_quotes(array_shift($tmp));
-			$tmp1 = split(' ', array_shift($tmp));
+			$tmp1 = explode(' ', array_shift($tmp));
 			$arr['STATE'] = add_quotes(array_shift($tmp1));
 			$arr['ZIP'] = add_quotes(array_shift($tmp1));
 		break;

@@ -1,24 +1,28 @@
 <template>
-<div class="container-fluid">
-    <heading></heading>
-    <navigation></navigation>
-    <carousel></carousel>
-    <div class="row intro">
-        <div class="col text-center">
-            <h1>The Midwood Advantage</h1>
-            <h3>Midwood's services are comprehensive, time-saving, and bring a competitive advantage to your business.  
-            In addition to distributing an array of financially sound products, Midwood offers a wide variety of value-added solutions.</h3>
+    <div class="container-fluid">
+        <heading></heading>
+        <navigation></navigation>
+        
+        <carousel></carousel> 
+        <!--
+        <vid :options="videoOptions"></vid>
+        -->
+        <div class="row intro">
+            <div class="col text-center">
+                <h1>The Midwood Advantage</h1>
+                <h3>Midwood's services are comprehensive, time-saving, and bring a competitive advantage to your business.  
+                In addition to distributing an array of financially sound products, Midwood offers a wide variety of value-added solutions.</h3>
+            </div>
         </div>
-    </div>
-    <flipboxes></flipboxes>
-    <div class="row success">
-        <div class="col-12 text-center">
-            <h1>At Midwood, your success is our goal.</h1>
+        <flipboxes></flipboxes>
+        <div class="row success">
+            <div class="col-12 text-center">
+                <h1>At Midwood, your success is our goal.</h1>
+            </div>
+            <contentboxes></contentboxes>
         </div>
-        <contentboxes></contentboxes>
+        <foot></foot>
     </div>
-    <foot></foot>
-</div>
 </template>
 <script>
 module.exports = {   
@@ -26,10 +30,25 @@ module.exports = {
         heading: httpVueLoader('./common/heading.vue'),
         navigation: httpVueLoader('./common/navigation.vue'),
         carousel: httpVueLoader('./home/carousel.vue'),
+        vid: httpVueLoader('./home/video.vue'),
         flipboxes: httpVueLoader('./home/flipboxes.vue'),
         contentboxes: httpVueLoader('./home/contentboxes.vue'),
         foot: httpVueLoader('./common/foot.vue')
-    }
+    },
+    data: function() {
+		return {
+			videoOptions: {
+				autoplay: true,
+				controls: true,
+				sources: [
+					{
+						src: "./site/assets/carousel/corp_message.mp4",
+                        type: "video/mp4"                        
+					}
+				]
+			}
+		};
+	}
 }
 </script>
 <style scoped>

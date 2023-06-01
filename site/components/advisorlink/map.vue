@@ -112,7 +112,13 @@
             style="fill:#aaaaaa;fill-opacity:1;stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
             id="NY"
             d="m 824.62944,181.83935 -1.13163,-0.96996 -2.58658,-0.16166 -2.26324,-1.93992 -1.63061,-6.12913 -3.45846,0.0905 -2.44371,-2.7082 -19.38532,4.38194 -43.00178,8.72969 -7.52965,1.22799 -0.73816,-6.46834 1.4281,-1.12538 1.29328,-1.13162 0.96997,-1.61661 1.77826,-1.13162 1.93993,-1.77827 0.48498,-1.6166 2.10158,-2.74823 1.13163,-0.96996 -0.16166,-0.96997 -1.29329,-3.07154 -1.77826,-0.16166 -1.93993,-6.1431 2.90989,-1.77827 4.36483,-1.45494 4.04152,-1.29329 3.23321,-0.48498 6.30475,-0.16166 1.93993,1.29329 1.6166,0.16166 2.10159,-1.29329 2.58657,-1.13162 5.17313,-0.48498 2.10159,-1.77827 1.77826,-3.23321 1.61661,-1.93992 2.10158,0 1.93993,-1.13163 0.16166,-2.26324 -1.45494,-2.10159 -0.32332,-1.45494 1.13162,-2.10159 0,-1.45494 -1.77827,0 -1.77826,-0.8083 -0.8083,-1.13163 -0.16166,-2.58657 5.81977,-5.49645 0.64664,-0.8083 1.45495,-2.90989 2.90989,-4.5265 2.74823,-3.71819 2.10158,-2.4249 2.4151,-1.82561 3.08136,-1.24594 5.49645,-1.29329 3.23321,0.16166 4.5265,-1.45494 7.56519,-2.07117 0.51979,4.97967 2.42492,6.46644 0.8083,5.17315 -0.96996,3.87986 2.58657,4.5265 0.8083,2.10159 -0.8083,2.9099 2.9099,1.29328 0.64664,0.32332 3.07156,10.99294 -0.53629,5.05967 -0.48498,10.83127 0.8083,5.49647 0.8083,3.55654 1.45495,7.27474 0,8.08304 -1.13163,2.26325 1.83933,1.99279 0.79655,1.67842 -1.93992,1.77827 0.32332,1.29328 1.29328,-0.32332 1.45495,-1.29328 2.26324,-2.58657 1.13163,-0.64664 1.6166,0.64664 2.26325,0.16166 7.92136,-3.87985 2.90989,-2.74823 1.29328,-1.45494 4.20317,1.6166 -3.39487,3.55653 -3.87985,2.90989 -7.11306,5.33479 -2.58656,0.96997 -5.81978,1.93992 -4.04151,1.13163 -1.17474,-0.53293 -0.24402,-3.68853 0.48498,-2.74824 -0.16166,-2.10158 -2.81351,-1.699 -4.5265,-0.96997 -3.87986,-1.13162 -3.7182,-1.77828 z"
-            inkscape:connector-curvature="0" />
+            inkscape:connector-curvature="0" />        
+        <path
+            style="fill:#aaaaaa;fill-opacity:1;stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            d="m 824.62944,181.83935 -1.13163,-0.96996 -2.58658,-0.16166 -2.26324,-1.93992 -1.63061,-6.12913 -3.45846,0.0905 -2.44371,-2.7082 -19.38532,4.38194 -43.00178,8.72969 -7.52965,1.22799 -0.73816,-6.46834 1.4281,-1.12538 1.29328,-1.13162 0.96997,-1.61661 1.77826,-1.13162 1.93993,-1.77827 0.48498,-1.6166 2.10158,-2.74823 1.13163,-0.96996 -0.16166,-0.96997 -1.29329,-3.07154 -1.77826,-0.16166 -1.93993,-6.1431 2.90989,-1.77827 4.36483,-1.45494 4.04152,-1.29329 3.23321,-0.48498 6.30475,-0.16166 1.93993,1.29329 1.6166,0.16166 2.10159,-1.29329 2.58657,-1.13162 5.17313,-0.48498 2.10159,-1.77827 1.77826,-3.23321 1.61661,-1.93992 h 2.10158 l 1.93993,-1.13163 0.16166,-2.26324 -1.45494,-2.10159 -0.32332,-1.45494 1.13162,-2.10159 v -1.45494 h -1.77827 l -1.77826,-0.8083 -0.8083,-1.13163 -0.16166,-2.58657 5.81977,-5.49645 0.64664,-0.8083 1.45495,-2.90989 2.90989,-4.5265 2.74823,-3.71819 2.10158,-2.4249 2.4151,-1.82561 3.08136,-1.24594 5.49645,-1.29329 3.23321,0.16166 4.5265,-1.45494 7.56519,-2.07117 0.51979,4.97967 2.42492,6.46644 0.8083,5.17315 -0.96996,3.87986 2.58657,4.5265 0.8083,2.10159 -0.8083,2.9099 2.9099,1.29328 0.64664,0.32332 3.07156,10.99294 -0.53629,5.05967 -0.48498,10.83127 0.8083,5.49647 0.8083,3.55654 1.45495,7.27474 z"
+            id="USNY"
+            inkscape:connector-curvature="0"
+            sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />        
         <path
             style="fill:#aaaaaa;fill-opacity:1;stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
             id="PA"
@@ -872,6 +878,16 @@
             id="rect3123-63"
             style="fill:#aaaaaa;fill-opacity:1;stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
         </g>
+         <g
+            style="stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            id="442">
+            <path
+            inkscape:connector-curvature="0"
+            style="fill:#aaaaaa;fill-opacity:1;stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            id="E_CT"
+            d="m 868.31831,171.95663 -3.67743,-14.87881 -4.71882,0.92031 -9.21883,1.97282 4.64725,16.29607 5.17314,-1.13162 z"
+            sodipodi:nodetypes="ccccccc" />
+        </g>
         <g
             id="g3187"
             style="stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
@@ -1132,6 +1148,7 @@
             id="path4150"
             inkscape:connector-curvature="0"
             sodipodi:nodetypes="cccc" />
+        <circle id="TXH" style="fill:#aaaaaa;fill-opacity:1;stroke:#ffffff;stroke-width:1.25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;" cx="496.4" cy="467.4" r="10.7"/>
         </svg>
     </div>    
 </template>
@@ -1156,6 +1173,63 @@ module.exports = {
                 c = this.data[i].color;
                 s = this.data[i].states;
                 //Test for state regions
+
+                //If NY is included, or NYC and upstate NY are included, remove all and add only NY, hide USNY
+                if (s.includes('NY') || (s.includes('Upstate NY') && s.includes ('NYC'))) {
+                    s = s.filter(function(x) {
+                        return x != 'NYC' || x != 'Upstate NY' || x != 'NY';
+                    });
+                    $('#USNY').hide();   
+                    s.push('NY');
+                }
+                
+                if (s.includes('Upstate NY')) {
+                    s = s.filter(function(x) {
+                        return x != 'Upstate NY';
+                    });
+                    s.push('USNY');
+                }
+
+                if (s.includes('NYC')) {
+                    s = s.filter(function(x) {
+                        return x != 'NYC';
+                    });
+                    s.push('NY');
+                }
+
+                //If PA is included, or eastern and western PA are included, remove all and add only PA, hide E PA
+                if (s.includes('CT') || (s.includes('E CT') && s.includes ('W CT'))) {
+                    s = s.filter(function(x) {
+                        return x != 'E CT' || x != 'W CT' || x != 'CT';
+                    });
+                    $('#E_CT').hide();   
+                    s.push('CT');
+                }
+                
+                if (s.includes('W CT')) {
+                    s = s.filter(function(x) {
+                        return x != 'W CT';
+                    });
+                    s.push('CT');
+                }
+
+                //If TX is included, or TX houston and TX non houston , remove all and add only TX, hide Houston
+                if (s.includes('TX') || (s.includes('TX-H') && s.includes ('TXH'))) {
+                    s = s.filter(function(x) {
+                        return x != 'TX' || x != 'TXH' || x != 'TX-H';
+                    });
+                    $('#TXH').hide();   
+                    s.push('TX');
+                }
+                
+                if (s.includes('TX-H')) {
+                    s = s.filter(function(x) {
+                        return x != 'TX-H';
+                    });
+                    s.push('TX');
+                }
+
+
                 //If PA is included, or eastern and western PA are included, remove all and add only PA, hide E PA
                 if (s.includes('PA') || (s.includes('E PA') && s.includes ('W PA'))) {
                     s = s.filter(function(x) {

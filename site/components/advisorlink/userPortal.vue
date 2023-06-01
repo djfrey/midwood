@@ -41,9 +41,9 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-info border-info text-white"><i class="fas fa-search"></i></span>
                                 </div>
-                                <input type="text" :minlength="searchMin" :disabled="!$parent.nodes.length" v-model="query" class="form-control" placeholder="Enter at least three characters to begin searching">                                                                       
+                                <input type="text" :minlength="searchMin" :disabled="!nodes.length" v-model="query" class="form-control" placeholder="Enter at least three characters to begin searching">                                                                       
                                 <div class="input-group-append">
-                                    <button type="button" class="btn btn-danger" :disabled="query.length == 0" v-on:click="query = ''"><i class="fas fa-ban"></i> Clear</buutton>                                    
+                                    <button type="button" class="btn btn-danger" :disabled="query.length == 0" v-on:click="query = ''"><i class="fas fa-ban"></i> Clear</button>                                    
                                 </div>
                             </div> 
                         </div>
@@ -52,16 +52,16 @@
                 <div class="col-12 ml-2">                                
                     <p v-if="user.access.length == 0">You do not have access to any documents.</p>
                     <div id="tree-root" v-else>
-                        <h3 v-if="$parent.loading"><i class="fas fa-circle-notch fa-spin"></i> Loading...</h3>				
+                        <h3 v-if="loading"><i class="fas fa-circle-notch fa-spin"></i> Loading...</h3>			
                         <div v-else>
                             <h5 v-if="query.trim().length < searchMin">Showing all Documents</h5>
                             <h5 v-if="query.trim().length >= searchMin">Showing Documents matching "<strong>{{query}}</strong>"</h5>
 
                             <ol>
                                 <!-- The nodes, activeNode is set on click -->
-                                <node v-show="$parent.nodes.length > 0" v-for="(n, i) in $parent.nodes" :showall="false" :query="query" :node="n" :user="user" :key="n.id"></node>		
+                                <node v-show="nodes.length > 0" v-for="(n, i) in nodes" :showall="false" :query="query" :node="n" :user="user" :key="n.id"></node>		
                                 <!-- If a node's children collection is empty, show that to the user -->
-                                <li v-if="$parent.nodes.length == 0">
+                                <li v-if="nodes.length == 0">
                                     <div class="empty">		
                                         <span>
                                             <span class="fa-stack">
@@ -147,7 +147,15 @@ module.exports = {
             iam: [],
             sales: [{name: '', states: []}],
             page: '1',
-            query: ''
+            query: '',
+            fsAdvisorlink: [], //The firestore advisorlink collection
+            fsUsers: [],
+            fsStaff: [],
+            docs: [], //The nested array of firestore objects
+            users: [],
+            staff: [],
+            nodes: [],
+            loading: false
         }
     },
     methods: {
@@ -196,11 +204,11 @@ module.exports = {
 			}				
 			return style+' '+out;
         },
-        getStaff: function(coll) {            
+        getStaff: function(coll) {               
             var out = [];
             for (var i = 0; i < coll.length; i++) {    
                 
-                var o = this.$parent.staff.filter(function(a) {
+                var o = this.staff.filter(function(a) {
                     return a.id == coll[i].staffId;
                 })[0];                
                              
@@ -211,14 +219,46 @@ module.exports = {
             }
             return out;
         },
+        getData: function() {            
+            this.loading = true;
+            var _this = this;            
+           // var docsPromise = this.$bind('fsAdvisorlink',  db.collection('advisorlink').orderBy('sort', 'asc'), {maxRefDepth: 1});   
+            var docsPromise = axios.get('/site/data/firebase.docs.php');    
+            var staffPromise = axios.get('/site/data/firebase.staff.php');       
+            Promise.all([docsPromise, staffPromise]).then(function(response) {	                
+                //Get the firestore collection, create the nested array of objects			
+                //var d = response[0].data || [];		                							                	
+                var d = response[0].data || [];		                							                	
+				for (i = 0; i < d.length; i++) {
+                    let x = d[i];
+                    //The 'some' variable is set when some of the node's children are assigned
+                    x.some = false;					
+                    x.children = d.filter(function(y) {
+                        return y.parent.id == x.id;
+					});						
+                    _this.docs.push(x);                    
+				}			
+				//Set the global root element, the array element that will contain everything else 
+				_this.root = _this.docs.filter(function(n) {
+					return n.id == 'root';
+                });			                
+				//Set the root element 
+				_this.rootNode = _this.root[0]; //'root' is the array containing all of our data, use it to recursively find the current folder based on the path								
+                _this.nodes = _this.rootNode.children;  //The children of the current folder are displayed	
+                //Get staff
+                _this.staff = response[1].data || [];                
+                _this.iam = _this.getStaff(_this.$parent.user.iam || []);
+                _this.sales = _this.getStaff(_this.$parent.user.sales || []);                  
+				_this.loading = false;
+			});
+		},
         bubbleVisibility: function() {
             this.collapsed = false;	
             this.visible = true;	            
 		}
     },
     mounted: function() {
-        this.iam = this.getStaff(this.user.iam || []);
-        this.sales = this.getStaff(this.user.sales || []);            
+        this.getData();        
         eventBus.$on('showThis', function(s, i) {            
             s.$emit('showMe');   
         });           

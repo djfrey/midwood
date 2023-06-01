@@ -1,8 +1,8 @@
 Vue.use(Vuefire.firestorePlugin);
 
-/*
+
 //DEV
-firebase.initializeApp({
+/*firebase.initializeApp({
     apiKey: "AIzaSyBA0HSdr_i2roBOCTr7LTQmIcQ4aMafpuo",
     authDomain: "midwood-8adb7.firebaseapp.com",
     databaseURL: "https://midwood-8adb7.firebaseio.com",
@@ -10,8 +10,8 @@ firebase.initializeApp({
     storageBucket: "midwood-8adb7.appspot.com",
     messagingSenderId: "1090089763875",
     appId: "1:1090089763875:web:aa0cf28921f5c924"
-});
-*/
+});*/
+
 
 firebase.initializeApp({
 	apiKey: "AIzaSyCZDVnznP9i3h4on9i6YSF6vaeAml8_6rU",
@@ -26,6 +26,25 @@ firebase.initializeApp({
 const db = firebase.firestore();
 const storage = firebase.storage().ref();
 const auth = firebase.auth();
+
+//Firebase authentication
+
+firebase.auth().signInAnonymously().catch(function(error) {
+	if (error.code > '') {
+		this.setAlert(true, 'Unable to authenticate fo firebase: '+error.message, 'alert-danger');		
+	}
+});
+
+/*firebase.auth().onAuthStateChanged(function(user) {
+	if (!user) {
+		this.user = {};
+		localStorage.removeItem('cookie');
+		this.role = '';
+		this.loggedIn = false;
+		window.location.replace(window.location.protocol+'//'+window.location.host+'/advisorlink/');
+	}
+});*/
+  
 
 const alertDefault = {
 	display: false,
@@ -80,7 +99,7 @@ const router = new VueRouter({
 				default: true,
 				navigation: true
 			}
-		},
+		},		
 		{
 			path: '*',
 			redirect: '/files/'
@@ -103,7 +122,7 @@ new Vue({
 	},
 	methods: {
 		isLoggedIn: function() {
-			var l = JSON.parse(localStorage.getItem('cookie')) || {};			
+			var l = JSON.parse(localStorage.getItem('cookie')) || {};	
 			if (l.key == 'mw-advisorlink') {      				
                 this.user = l.user;
 				this.role = l.role;
@@ -111,7 +130,7 @@ new Vue({
 				if (this.user.isAdmin != 'yes') { //Non-admins should be redirected to the portal
 					window.location.replace(window.location.protocol+'//'+window.location.host+'/advisorlink/');	
 				}                           
-			} else {
+			} else {				
                 this.user = {};
 				localStorage.removeItem('cookie');
                 this.role = '';

@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="http://www.gafriannuityforms.com/gw_Assets/css/stylesheetfinal.css" type="text/css" />
+   <script src="http://www.gafriannuityforms.com/gw_Assets/js/javascriptfinal.js?ts=8348747474"> </script>
+
+    <title>
+	 New Business Forms Wizard 
+</title><link rel="stylesheet" href="Content/css/jquery-ui-1.9.2.custom.min.css" type="text/css" />
+    <script language="JavaScript" src="../../Scripts/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+
+<!-- gaconnect styles -->
+<link href="https://gaconnect.com/Content/web/css?v=XINgmH23yf_p39wHweJ37h-yrSOEVNlY7MkUjAmpXFw1" rel="stylesheet" /><link href="https://gaconnect.com/ResourcePackages/GAConnect/assets/dist/css/bundles?v=Llfu-0OQ-mhnLKBVjhMW23f6gB4z0wPWgEE1toOjdC81" rel="stylesheet" />
+<style>
+.header-logo{
+	background-image: url("https://www.gaconnect.com/images/librariesprovider2/agent-image-library/global/logo-gaig.png");
+	background-position: 0 0;
+	background-size: 360px 105px;
+	width: 360px;
+	height: 105px;
+	display: block;
+	margin: 28px 10px;
+}
+/* override some gaconnect styles */
+.badge {
+    display: block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    color: #003c69;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: none;
+    background-color: transparent;
+    border-radius: 0;
+	text-transform: none;
+}
+.header {
+    font-weight: bold;
+    text-transform: none;
+    padding-left: 5px;
+}
+a {
+    text-transform: none;
+}
+dl.resourceCenter dd.sectionDetail li.question div.control input.radio {
+	width:auto;
+}
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+<header class="header-global hidden-print" role="banner">
+  <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="visible-xs menu-xs hidden-print">
+        <div class="row">
+          <div class="header-brand col-sm-4 text-center"> <a href="/" id="ctl00_mobileHeader_hlHomeMobile"> <img class="img-responsive" src="https://www.gaconnect.com/images/librariesprovider2/agent-image-library/global/logo-gaig.png" /> </a> </div>
+        </div>
+      </div>
+      <div class="hidden-xs">
+        <div id="master-header" class="container-fluid">
+          <header class="row">            
+            <div class="row">
+              <div class="header-brand col-sm-4"> <a href="/" id="ctl00_header_hlHomeDesktop" class="header-logo"></a> </div>
+              <div class="col-sm-8">
+              </div>
+            </div>
+          </header>
+        </div>
+        <script type="text/javascript">
+	var GAIG = GAIG || {};
+	GAIG.Tools = {        
+	    setBodyPadding: function () {	        
+	        window.requestAnimationFrame(function () {	            
+	            var padding = $('#master-header').css('height');	            
+	            if (padding != '0px') {
+	                $("body").css('padding-top', padding);
+	            } else {
+	                $("body").css('padding-top', '');
+	            }
+	        });
+		}
+	}
+	$(document).ready(function () {
+		GAIG.Tools.setBodyPadding();
+	});
+	$(window).resize(function () {
+		GAIG.Tools.setBodyPadding();
+	});
+	
+	/* dwm - 10/16/2015 - Added reset on scroll to compensate for changing height of master-header  */
+	$(window).scroll(function () {
+		GAIG.Tools.setBodyPadding();
+	});
+</script> 
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="row">
+		<!-- content and links -->
+            <div class="container">
+			<!-- h2>Welcome to the Great American Annuity Forms and Marketing Materials Website</h2 -->
+            
+  <div id="formsDiv" class="col-sm-7 col-md-7 col-lg-7">
+    <div class="line">
+      <h3>Your Sales & Marketing Tool Kit</h3>
+      <div class="mod staticResourceCenter"> </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+
+            var company = "Great American Life Insurance Company - Bank";
+            var organization = "";
+            var environment = "https://www.gafriannuityforms.com";
+
+            $(".staticResourceCenter").children().remove();
+            $(".staticResourceCenter").productresourcecenter({
+                actionBase: environment + "/iOSNBK/",
+                assetBase: environment + "/gw_Assets/img/icons/",
+                externalSite: true,
+                showSupportMaterials: false,
+                company: company,
+                organization: organization
+            });
+            $(".ProductContentID").css("width", "300px");
+        });
+    </script> 
+  </div>
+  <div id="sideDiv" class="col-sm-5 col-md-5 col-lg-5">
+    <table id="linkTable" style="margin-top:15px;">
+      
+      <tr>
+        <th>Annotated new business forms:</th>
+      </tr>
+      
+      <tr>
+        <td style="padding:2px 0px"><a href="/Content/upload/7_Nationwide forms.pdf" target="_blank">Nationwide forms</a></td>
+      </tr>
+      
+      <tr>
+        <td style="padding:2px 0px"><a href="/Content/upload/7_State-specific forms.pdf" target="_blank">State-specific forms</a></td>
+      </tr>
+      
+    </table>
+  </div>
+  
+  <script language="JavaScript" type="text/javascript">
+$(window).load(function () {
+    if(window.location.href.toString().split(window.location.host)[1] == '/'){
+            if (!checkCookie()) {
+            $('#popup').show();
+            $('#message').show();
+            var myCenter = $(window).width();
+            myCenter = myCenter*.5 - 175;
+            $('#message').css( "left", myCenter );
+            $('#popup').fadeTo(0, 0.5);
+            $('.target').change(function() {
+                    $('#popup').hide();
+                    $('#message').hide();
+                    if($(this).val() != 'other'){
+                        window.location = '/'+$(this).val();
+                    }
+                    setCookie('gaaClient',$(this).val(),365);
+
+            });
+            }
+    }
+});
+$(window).resize(function() {
+	var myCenter = $(window).width();
+	myCenter = myCenter*.5 - 175;
+  $('#message').css( "left", myCenter );
+});
+
+function getCookie(c_name)
+{
+var i,x,y,ARRcookies=document.cookie.split(";");
+for (i=0;i<ARRcookies.length;i++)
+  {
+  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+  x=x.replace(/^\s+|\s+$/g,"");
+  if (x==c_name)
+    {
+    return unescape(y);
+    }
+  }
+}
+
+function setCookie(c_name,value,exdays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate() + exdays);
+var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+document.cookie=c_name + "=" + c_value + "; path=/";
+}
+
+function checkCookie() {
+	var gaaClient=getCookie("gaaClient");
+	if (gaaClient!=null && gaaClient!="") {
+                if(gaaClient != 'other'){
+                    window.location = '/'+gaaClient;
+                }
+		return true;
+	} else {
+		return false;
+	}
+}
+</script>
+  <div id="popup" style="display:none; position:absolute; left:0px; top:0px; height:100%; width:100%; text-align:center; background-color:#666; margin:0px; padding:0px"> </div>
+  <div id="message" style="display:none; position:absolute;top:100px;background-color:#fff; color:#333; width:350px; height:200px; text-align:left; padding:20px; margin:0px auto; font-size:12px; line-height:20px;"> <strong style="font-size:16px;">Welcome to Great American Annuity!</strong><br>
+    <br>
+    In order to ensure you receive all required New Business forms, please select your firm affiliation. <br>
+    <br>
+    <div style="width:100%; text-align:center;">
+      <select name="state" class="target">
+        <option value="">Select One</option>
+        <option value="lpl">LPL</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+<br /><br />
+            </div>
+</div>
+  <footer class="footer-global hidden-print">
+    <div class="container-fluid">
+      <div class="container">
+      <!--
+        <div class="footer-logo" id="Logo">
+          <hr>
+          <a id="ctl00_Footer1_ancHome" href="/"></a> 
+		</div>
+		-->
+        <div class="footer-copyright">
+          <p>Copyright © 2018 Great American Insurance Group. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- container-fluid -->
+
+</map>
+
+<script>
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49865874-1', 'gaannuityforms.com');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

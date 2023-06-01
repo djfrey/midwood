@@ -10,6 +10,17 @@ firebase.initializeApp({
     messagingSenderId: "851247924446",
     appId: "1:851247924446:web:7305536e41d2837f"
 });
+/*
+DEV
+firebase.initializeApp({
+	apiKey: "AIzaSyBA0HSdr_i2roBOCTr7LTQmIcQ4aMafpuo",
+    authDomain: "midwood-8adb7.firebaseapp.com",
+    databaseURL: "https://midwood-8adb7.firebaseio.com",
+    projectId: "midwood-8adb7",
+    storageBucket: "midwood-8adb7.appspot.com",
+    messagingSenderId: "1090089763875",
+    appId: "1:1090089763875:web:aa0cf28921f5c924"
+});*/
 
 const db = firebase.firestore();
 const storage = firebase.storage().ref();
@@ -36,7 +47,7 @@ httpVueLoader.register(Vue, './components/alert.vue');
 
 //Routes and route components
 const router = new VueRouter({
-	mode: 'history',
+	mode: 'history',	
 	routes: [
 		{ 
 			name: 'home',
